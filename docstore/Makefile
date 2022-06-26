@@ -12,3 +12,7 @@ docker-run-mongo-v4:
 	docker rm -f mongo3 
 	docker run -d --name mongo3  -p 27018:27017 mongo:3
 	@echo "...done. Run \"docker rm -f mongo3\" to clean up the container."
+
+clean:
+	docker rm -f mongo3
+	docker rm -f mongo4

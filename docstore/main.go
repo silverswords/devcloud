@@ -2,10 +2,14 @@ package main
 
 import (
 	"context"
+	"os"
 	"time"
 
+	"github.com/onsi/ginkgo/reporters/stenographer/support/go-colorable"
+	_ "gocloud.dev/docstore/mongodocstore"
+
 	"github.com/sirupsen/logrus"
-	"gocloud.dev/docstore/mongodocstore"
+	"gocloud.dev/docstore"
 	"gocloud.dev/gcerrors"
 )
 
@@ -20,14 +24,14 @@ func main() {
 
 	logrus.SetReportCaller(true)
 
-	client, err := mongodocstore.Dial(ctx, "mongodb://localhost:27017")
+	logrus.SetFormatter(&logrus.TextFormatter{ForceColors: true})
+	logrus.SetOutput(colorable.NewColorableStdout())
+	os.Setenv("MONGO_SERVER_URL", "mongodb://localhost:27017")
+
+	coll, err := docstore.OpenCollection(context.Background(), "mongo://my-db/my-coll?id_field=name")
 	if err != nil {
-		logrus.Info(err)
-	}
-	mcoll := client.Database("my-db").Collection("my-coll")
-	coll, err := mongodocstore.OpenCollection(mcoll, "name", nil)
-	if err != nil {
-		logrus.Info(err)
+		logrus.Errorf("could not open collection: ", err)
+		return
 	}
 	defer coll.Close()
 
@@ -73,7 +77,6 @@ func main() {
 			}
 			logrus.Info(err)
 		}
-		logrus.Printf("%+v\n", pat)
 		break
 	}
 }

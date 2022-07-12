@@ -1,9 +1,7 @@
 // generate restful API for model with nosql database.
 package rest
 
-type Schema struct {
-	fields []*SchemaFeild // ordered field
-}
+type Schema []SchemaFeild
 
 type SchemaFeild struct {
 	Name string

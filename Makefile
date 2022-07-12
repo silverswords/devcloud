@@ -1,5 +1,5 @@
 
-restdev: mongodev
+restdev: 
 	air --build.cmd "go build -o bins/rest cmd/rest/main.go" --build.bin "./bins/rest"
 
 mongodev: 

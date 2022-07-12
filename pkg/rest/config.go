@@ -1,8 +1,8 @@
 package rest
 
 const (
-	mongoURL = "mongo://my-db/my-coll?id_field=name"
-	memURL   = "mem://collection/_id"
+	mongoURL = "mongo://devcloud/collection?id_field=name"
+	memURL   = "mem://collection/name"
 )
 
 type Config struct {

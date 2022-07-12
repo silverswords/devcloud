@@ -4,19 +4,27 @@ import "github.com/gin-gonic/gin"
 
 func Run() {
 	router := gin.Default()
-
+	app := NewRestfulAPI()
 	// todo(abserari): add group for each resource
-	router.GET("/records/:record_name/:id", GetRecord)
-	router.GET("/records/:record_name", ListRecord)
-	router.POST("/records/:record_name", CreateRecord)
-	router.DELETE("/records/:record_name/:id", DeleteRecord)
-	router.PUT("/records/:record_name/:id", UpdateRecord)
+	records := router.Group("/record")
+	{
+		records.Use(getRecord())
+		records.GET("/:record_name/:id", app.GetRecord)
+		records.GET("/:record_name", app.ListRecord)
+		records.POST("/:record_name", app.CreateRecord)
+		records.DELETE("/:record_name/:id", app.DeleteRecord)
+		records.PUT("/:record_name/:id", app.UpdateRecord)
 
-	router.GET("/collections", ListDocument)
-	router.GET("/collections/:id", GetDocument)
-	router.POST("/collections", CreateDocument)
-	router.DELETE("/collections/:id", DeleteDocument)
-	router.PUT("/collections/:id", UpdateDocument)
+	}
+
+	documents := router.Group("/document")
+	{
+		documents.GET("/", app.ListDocument)
+		documents.GET("/:id", app.GetDocument)
+		documents.POST("/", app.CreateDocument)
+		documents.DELETE("/:id", app.DeleteDocument)
+		documents.PUT("/:id", app.UpdateDocument)
+	}
 
 	router.Run("0.0.0.0:8080")
 }

@@ -13,6 +13,10 @@
 
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/silverswords/devcloud)
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=silverswords/devcloud&type=Date)](https://star-history.com/#silverswords/devcloud&Date)
+
 ## Intro
 devcloud aims to help developers solve development problems, so that programmers with low professional knowledge can easily use modern development resources without thinking about completing best practices. Based on this, devcloud makes combined innovation to serve users. It is divided into server programs, client code, and development documents. 
 - server: the devcloud Server starts one or more pods, uses local computing and storage resources to connect remote computing and storage resources, and provides functions such as state storage management, real-time API, and edge funtion. It can be considered as an operating system that uses the entire cloud as a resource when a distributed application runs. Use the configuration mechanism to assemble different server functions. 

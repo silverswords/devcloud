@@ -1,0 +1,8 @@
+docstore:
+  driver: mongo
+  enabled: true
+  URI: mongo://devcloud/collection?id_field=Name
+  database:
+  collection:
+  idField:
+

@@ -1,0 +1,24 @@
+
+App:
+  Name: gin-example
+
+
+http:
+  gin:
+    enabled: true
+    hostport: :8080
+
+docstore:
+  driver: mongo
+  enabled: true
+  URI: mongo://devcloud/collection?id_field=Name
+  database: devcloud
+  collection: collection
+  idField: Name
+
+tasks:
+  - enabled: true
+    name: mongo
+    task: mongo
+    type: docker
+    frequency: always

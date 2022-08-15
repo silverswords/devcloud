@@ -19,8 +19,12 @@
 
 
 ## Intro
-devcloud aims to help developers solve development problems, so that programmers with low professional knowledge can easily use modern development resources without thinking about completing best practices. Based on this, devcloud makes combined innovation to serve users. It is divided into server programs, client code, and development documents. 
-- server: the devcloud Server starts one or more pods, uses local computing and storage resources to connect remote computing and storage resources, and provides functions such as state storage management, real-time API, and edge funtion. It can be considered as an operating system that uses the entire cloud as a resource when a distributed application runs. Use the configuration mechanism to assemble different server functions. 
-- client: It is divided into SDK and sidecar to help clients access functions. 
-- doc: It is divided into concept analysis and best practices, and is used to popularize knowledge and help different options for innovation. 
-At the same time, the development concept adheres to the experience of the open source community and is built on a rich and mutual-aid ecology. Excellent parts that can be quoted should be good at quoting. 
+The core meaning of devcloud is data ownership, so to give companies without digital infrastructure to provide cheap private digital infrastructure solutions, and at the same time can help developers solve development problems, so that programmers with low levels of expertise can easily use modern development resources, without thinking to complete best practices, as a basis to make fast, maintainable portfolio services.
+
+● Vendor (Server): The devcloud server starts one or more pods to link remote compute and storage resources using local compute and storage resources to provide functions such as state storage management, real-time API, edge funtion, and so on. It can be thought of as a distributed application runtime with the entire cloud as the operating system for resources. Different server-side functions are assembled and installed on kubernetes through Golang configurations (works like Kubeadm). and bare-metal deployment.
+● Driver (Client): Divided into SDK and sidecar or tools manifestations to help code business with fast, decoupled access to features and best practices without the need to understand the complex digital infrastructure knowledge. For example, application developers can scale the business data processing capabilities of an application without having to understand sub-repositories and tables. Users only need to write business code, generate it through sdk, tools, and register sidecar to the services provided by devcloud, and enjoy the benefits of common code functions brought by devcloud without repeated writing and one-click configuration.
+
+● Doc: Divided into concept analysis and best practices, used to spread knowledge and help innovation of different options.
+● Service (worker, Trait): Services provided based on a set of digital infrastructure for the upper layer to call any combination to become APP.
+
+Translated with www.DeepL.com/Translator (free version)

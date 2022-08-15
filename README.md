@@ -11,7 +11,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/silverswords/devcloud/badge)](https://www.codefactor.io/repository/github/silverswords/devcloud)
 
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/silverswords/devcloud)
-
+[![Discord Banner](https://discord.com/api/guilds/771388143148073040/widget.png?style=banner2)](https://discord.gg/rRwryXfj3u)
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=silverswords/devcloud&type=Date)](https://star-history.com/#silverswords/devcloud&Date)
